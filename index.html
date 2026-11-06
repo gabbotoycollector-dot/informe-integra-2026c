@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Informe Integra 2026C</title>
+<meta name="description" content="Informe de la plataforma Integra 2026C y propuesta del semillero SamaLab by CUN · Diseño Gráfico CUN Santa Marta.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#4f2382">
+<link rel="icon" type="image/svg+xml" href="img/brand/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Saira+Semi+Condensed:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  /* Un solo mundo visual: el de la plataforma Integra 2026C (lavanda, vidrio, aqua · violeta · magenta). Narrador: Sharkie. */
+  --bg:#efeafd; --ink:#1c1233; --ink-2:#3a2f55; --muted:#6a5f86;
+  --purple:#4f2382; --violet:#7b3fb8; --magenta:#c3277f; --pink:#ff5fa8; --aqua:#5fe3d4; --teal:#139e93; --amber:#f2a516;
+  --glass:rgba(255,255,255,.66); --glass-strong:rgba(255,255,255,.84); --line:rgba(255,255,255,.95); --rule:rgba(79,35,130,.14);
+  --display:'Saira Semi Condensed','Arial Narrow',system-ui,sans-serif; --body:'Outfit',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --r:24px; --shadow:0 18px 44px rgba(40,10,80,.13);
+  color-scheme:light;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+body{background:var(--bg);color:var(--ink);font:400 17px/1.6 var(--body);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;height:auto;display:block}
+a{color:var(--purple)}
+:focus-visible{outline:3px solid var(--violet);outline-offset:3px;border-radius:6px}
+h1,h2,h3{font-family:var(--display);line-height:1.05;text-wrap:balance;letter-spacing:-.01em}
+h2{font-size:clamp(2rem,4.4vw,3.1rem);font-weight:600}
+h3{font-size:1.5rem;font-weight:600}
+p{max-width:68ch}
+.wrap{width:min(1160px,100% - 32px);margin-inline:auto}
+.eyebrow{font:600 .78rem/1 var(--display);letter-spacing:.3em;text-transform:uppercase;color:var(--teal)}
+
+/* fondo: esferas de la plataforma */
+.orbs{position:fixed;inset:0;z-index:-1;pointer-events:none;overflow:hidden}
+.orbs i{position:absolute;border-radius:50%;filter:blur(2px);opacity:.85}
+.orbs i:nth-child(1){width:520px;height:520px;left:-160px;top:40%;background:radial-gradient(circle at 32% 28%,#ffb3d6,#ff5fa8 38%,#c3277f 75%,#7b2a8f)}
+.orbs i:nth-child(2){width:420px;height:420px;right:-120px;top:-120px;background:radial-gradient(circle at 32% 28%,#d9c2ff,#9b5de5 42%,#5b2a96 85%)}
+.orbs i:nth-child(3){width:460px;height:460px;right:-180px;bottom:-160px;background:radial-gradient(circle at 32% 28%,#e6fffb,#5fe3d4 36%,#16a69a 82%)}
+.orbs i:nth-child(4){width:120px;height:120px;left:32%;top:-40px;background:radial-gradient(circle at 32% 28%,#d8fbff,#2ccbe6 50%,#1386a8)}
+
+/* barra superior */
+.top{position:sticky;top:0;z-index:20;background:rgba(239,234,253,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--rule)}
+.top .wrap{display:flex;align-items:center;gap:16px;height:64px}
+.top img{height:30px;width:auto}
+.top nav{margin-left:auto;display:flex;gap:6px;overflow-x:auto;scrollbar-width:none}
+.top nav a{font:500 .85rem/1 var(--body);color:var(--ink-2);text-decoration:none;padding:9px 12px;border-radius:999px;white-space:nowrap}
+.top nav a:hover{background:#fff}
+.dlpdf{order:3;font:600 .85rem/1 var(--body);color:#fff;background:var(--ink);text-decoration:none;padding:10px 16px;border-radius:999px;white-space:nowrap}
+.dlpdf:hover{background:var(--purple)}
+
+/* portada */
+.cover{padding:56px 0 40px}
+.cover .wrap{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);gap:32px;align-items:center}
+.cover .card{background:var(--glass-strong);border:1.5px solid var(--line);border-radius:36px;padding:40px;box-shadow:var(--shadow)}
+.logos{display:flex;align-items:center;gap:22px;flex-wrap:wrap;margin-bottom:28px}
+.logos .int{height:74px;width:auto;border-radius:18px;background:linear-gradient(140deg,#2a1a4d,#1c1233);padding:8px 14px}
+.logos .dg{height:30px;width:auto}
+.logos .sl{height:26px;width:auto}
+.cover h1{font-size:clamp(2.6rem,6vw,4.6rem);font-weight:700;margin:14px 0 10px}
+.cover h1 span{display:block;font:300 .45em/1.2 var(--body);color:var(--purple);letter-spacing:0;margin-top:8px}
+.cover p.lead{font-size:1.12rem;color:var(--ink-2)}
+.meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.pill{font:500 .82rem/1 var(--body);padding:9px 14px;border-radius:999px;background:#fff;border:1px solid var(--rule);color:var(--ink-2)}
+.pill--dark{background:var(--ink);color:#fff;border-color:var(--ink)}
+.cover .shark{width:min(360px,100%);margin-inline:auto;filter:drop-shadow(0 26px 30px rgba(40,10,80,.28))}
+
+/* narrador */
+.host{display:grid;grid-template-columns:96px minmax(0,1fr);gap:16px;align-items:end;margin:8px 0 28px}
+.host img{width:96px;filter:drop-shadow(0 10px 12px rgba(40,10,80,.22))}
+.bubble{position:relative;background:#fff;border:1.5px solid var(--line);border-radius:24px 24px 24px 6px;padding:16px 20px;box-shadow:0 10px 26px rgba(40,10,80,.10);max-width:760px}
+.bubble b.who{display:block;font:600 .74rem/1 var(--display);letter-spacing:.24em;text-transform:uppercase;color:var(--magenta);margin-bottom:6px}
+.bubble p{font-size:1.02rem}
+
+section.ch{padding:64px 0 24px}
+.chhead{display:flex;align-items:baseline;gap:16px;margin-bottom:18px;flex-wrap:wrap}
+.chnum{font:700 1rem/1 var(--display);color:#fff;background:linear-gradient(135deg,var(--violet),var(--magenta));border-radius:12px;padding:8px 11px;letter-spacing:.06em}
+.prose{display:grid;gap:14px;margin-bottom:24px}
+.prose p{color:var(--ink-2)}
+
+/* tarjetas */
+.glass{background:var(--glass);border:1.5px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow)}
+.kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin:8px 0 24px}
+.kpi{padding:20px}
+.kpi b{display:block;font:700 2.4rem/1 var(--display);color:var(--purple);font-variant-numeric:tabular-nums}
+.kpi span{display:block;margin-top:8px;font-size:.92rem;color:var(--muted);line-height:1.35}
+.kpi.ok b{color:var(--teal)}
+
+.cols2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.cols3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.box{padding:22px}
+.box h3{margin-bottom:8px;font-size:1.25rem}
+.box p{font-size:.98rem;color:var(--ink-2)}
+.tag{display:inline-block;font:600 .72rem/1 var(--display);letter-spacing:.18em;text-transform:uppercase;color:var(--violet);margin-bottom:10px}
+
+/* función: captura + texto */
+.feat{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(0,1fr);gap:24px;align-items:start;margin:30px 0 44px}
+.feat.rev{grid-template-columns:minmax(0,1fr) minmax(0,1.45fr)}
+.feat.rev .shotcol{order:2}
+.shot{margin:0}
+.frame{background:#fff;border-radius:18px;padding:8px;border:1px solid var(--rule);box-shadow:var(--shadow)}
+.frame .bar{display:flex;gap:6px;padding:4px 6px 10px}
+.frame .bar i{width:9px;height:9px;border-radius:50%;background:#e2dbf3}
+.frame img{border-radius:10px;width:100%;height:auto}
+.shot figcaption{font-size:.85rem;color:var(--muted);margin-top:10px;padding-left:4px}
+.shots2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.feat h3{margin:4px 0 10px}
+.feat p{color:var(--ink-2);font-size:1rem}
+.rules{margin-top:16px;background:var(--glass-strong);border:1.5px solid var(--line);border-radius:20px;padding:18px 20px}
+.rules h4{font:600 .78rem/1 var(--display);letter-spacing:.22em;text-transform:uppercase;color:var(--magenta);margin-bottom:10px}
+.rules ul{list-style:none;display:grid;gap:8px}
+.rules li{position:relative;padding-left:22px;font-size:.95rem;line-height:1.45;color:var(--ink-2)}
+.rules li::before{content:"";position:absolute;left:2px;top:.5em;width:9px;height:9px;border-radius:3px;background:linear-gradient(135deg,var(--aqua),var(--violet))}
+.rules li b{color:var(--ink)}
+
+.phones{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px;margin:18px 0 8px}
+.phone{background:#1c1233;border-radius:30px;padding:8px;box-shadow:var(--shadow)}
+.phone img{border-radius:24px}
+.phone + figcaption{display:none}
+
+.certs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:16px}
+.certs img{border-radius:12px;box-shadow:var(--shadow);border:1px solid var(--rule)}
+
+/* tablas */
+.tbl{width:100%;border-collapse:collapse;font-size:.95rem}
+.tbl th,.tbl td{text-align:left;padding:11px 14px;border-bottom:1px solid var(--rule);vertical-align:top}
+.tbl th{font:600 .74rem/1.2 var(--display);letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.tbl td.n{font-variant-numeric:tabular-nums;font-weight:600;color:var(--purple);white-space:nowrap}
+.tblwrap{overflow-x:auto;padding:6px 8px}
+
+/* gráfico */
+.chart{padding:20px 22px 12px}
+.chart h3{font-size:1.2rem}
+.chart .sub{font-size:.9rem;color:var(--muted);margin:4px 0 6px}
+.chart svg{width:100%;height:auto;display:block}
+
+.timeline{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:10px 0 18px}
+.step{padding:18px}
+.step .when{font:600 .78rem/1 var(--display);letter-spacing:.14em;text-transform:uppercase;color:var(--teal)}
+.step h3{font-size:1.12rem;margin:8px 0 6px}
+.step p{font-size:.92rem;color:var(--ink-2)}
+
+.quote{font:500 clamp(1.3rem,2.6vw,1.8rem)/1.3 var(--display);color:var(--purple);max-width:30ch}
+
+.samahead{display:flex;align-items:center;gap:20px;flex-wrap:wrap;padding:26px;margin-bottom:18px;background:linear-gradient(135deg,#1c1233,#2f1a57);border-radius:28px;color:#fff}
+.samahead img{height:44px;width:auto}
+.samahead p{color:#dcd2f3;max-width:62ch}
+
+.close{padding:64px 0 40px}
+.close .card{display:grid;grid-template-columns:200px minmax(0,1fr);gap:28px;align-items:center;padding:32px;border-radius:32px}
+.close img.sh{width:200px;filter:drop-shadow(0 18px 20px rgba(40,10,80,.25))}
+footer{padding:28px 0 40px;border-top:1px solid var(--rule)}
+footer .wrap{display:flex;align-items:center;gap:22px;flex-wrap:wrap;font-size:.88rem;color:var(--muted)}
+footer img.int{height:46px;border-radius:12px;background:#1c1233;padding:5px 9px}
+footer img.dg{height:24px}
+footer .sign{margin-left:auto;display:flex;align-items:center;gap:8px}
+footer .sign img{height:20px}
+
+@media (max-width:980px){
+  .cover .wrap,.feat,.feat.rev,.close .card{grid-template-columns:1fr}
+  .feat.rev .shotcol{order:0}
+  .kpis{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .cols3,.timeline{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .phones{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .cover .shark{width:240px}
+  .close img.sh{width:140px}
+}
+@media (max-width:620px){
+  body{font-size:16px}
+  .top nav{display:none}
+  .cover{padding-top:28px}.cover .card{padding:24px;border-radius:26px}
+  .cols2,.cols3,.timeline,.shots2,.certs{grid-template-columns:1fr}
+  .phones{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .host{grid-template-columns:64px minmax(0,1fr)}.host img{width:64px}
+  .kpi b{font-size:2rem}
+  footer .sign{margin-left:0}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="orbs" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+
+<header class="top">
+  <div class="wrap">
+    <img src="img/brand/samalab-color.svg" alt="SamaLab-CUN" width="120" height="30">
+    <a class="dlpdf" href="Informe_Integra_2026C.pdf" download>Descargar PDF</a>
+    <nav aria-label="Secciones">
+      <a href="#origen">Origen</a><a href="#comite">Comité</a><a href="#recorrido">Recorrido</a><a href="#votacion">Votación</a><a href="#certificados">Certificados</a><a href="#tecnologia">Tecnología</a><a href="#resultados">Resultados</a><a href="#samalab">SamaLab</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<!-- PORTADA -->
+<section class="cover">
+  <div class="wrap">
+    <div class="card">
+      <div class="logos">
+        <img class="int" src="img/brand/logoIntegra2026C.png" alt="Integra 2026C · IA y cocreación" width="250" height="74">
+        <img class="dg" src="img/brand/dg-cun-negro.png" alt="Diseño Gráfico · CUN" width="166" height="30">
+        <img class="sl" src="img/brand/samalab-color.svg" alt="SamaLab-CUN" width="108" height="26">
+      </div>
+      <p class="eyebrow">Informe de cierre · Diseño Gráfico · CUN Santa Marta</p>
+      <h1>Plataforma Integra 2026C<span>Cómo funcionó, qué implementa y hacia dónde vamos con SamaLab by CUN</span></h1>
+      <p class="lead">La jornada de sustentaciones del 3 y 4 de noviembre de 2026 se gestionó de principio a fin desde una plataforma propia, diseñada y programada en la regional, sin un solo error de servidor y sin costo de licencias.</p>
+      <div class="meta"><span class="pill pill--dark">62 grupos programados</span><span class="pill">2 salas</span><span class="pill">9 docentes</span><span class="pill">Comité Integra</span><span class="pill">Noviembre de 2026</span></div>
+    </div>
+    <img class="shark" src="img/brand/sharkie-happy.webp" alt="Sharkie, la mascota de Integra" width="360" height="480">
+  </div>
+</section>
+
+<!-- RESUMEN -->
+<section class="ch" id="resumen" style="padding-top:20px">
+  <div class="wrap">
+    <div class="host"><img src="img/brand/sharkie-smile.webp" alt="" width="96" height="128"><div class="bubble"><b class="who">Sharkie</b><p>¡Hola! Soy Sharkie y los voy a acompañar por este informe. Primero, los números de la jornada; después les cuento de dónde salió la plataforma, quién la usó y cómo funciona cada parte.</p></div></div>
+    <div class="kpis">
+      <div class="kpi glass ok"><b>0</b><span>errores de servidor en 12.260 solicitudes servidas por Cloudflare</span></div>
+      <div class="kpi glass"><b>54</b><span>sustentaciones finalizadas y 60 sesiones cronometradas por el Comité</span></div>
+      <div class="kpi glass"><b>59</b><span>evaluaciones con rúbrica, con la nota calculada en el momento</span></div>
+      <div class="kpi glass"><b>214</b><span>registros de asistencia de estudiantes y docentes</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- 01 ORIGEN -->
+<section class="ch" id="origen">
+  <div class="wrap">
+    <div class="chhead"><span class="chnum">01</span><h2>Cómo nació la plataforma</h2></div>
+    <div class="host"><img src="img/brand/sharkie-thinking.webp" alt="" width="96" height="128"><div class="bubble"><b class="who">Sharkie</b><p>Esto no empezó desde cero: empezó leyendo lo que había pasado en las entregas anteriores.</p></div></div>
+    <div class="prose">
+      <p>La plataforma nace de un ejercicio retrospectivo sobre el informe del semestre pasado. En ese momento, el docente Gabriel Antolínez implementó las primeras herramientas con formularios de Google y Google Apps Script para apoyar la gestión del profesor Morales y del resto del equipo docente durante las sustentaciones Integra.</p>
+      <p>A partir del análisis de las necesidades que dejaron las entregas pasadas, comenzó a maquetar una plataforma propia que reuniera en un solo lugar la agenda, la evaluación, el control de tiempos y los informes.</p>
+    </div>
+    <div class="timeline">
+      <div class="step glass"><span class="when">Semestre anterior</span><h3>Formularios y Apps Script</h3><p>Primeras herramientas para apoyar la gestión de las sustentaciones.</p></div>
+      <div class="step glass"><span class="when">Retrospectiva</span><h3>Necesidades detectadas</h3><p>Agenda pública, rúbrica única, control de tiempos e informes por docente.</p></div>
+      <div class="step glass"><span class="when">30 oct a 5 nov 2026</span><h3>Plataforma Integra 2026C</h3><p>Diseño, programación y 14 versiones publicadas en una semana.</p></div>
+      <div class="step glass"><span class="when">3 y 4 nov 2026</span><h3>Jornada en vivo</h3><p>Docentes y Comité trabajaron en la plataforma durante los dos días.</p></div>
+    </div>
+    <div class="cols2" style="margin-top:28px">
+      <div class="box glass"><span class="tag">Identidad visual</span><h3>Alineada con Bogotá, con una constante propia</h3><p>Todo el sistema visual sigue los conceptos gráficos entregados desde Bogotá para Integra 2026C · IA y cocreación. Se complementa con una constante de la regional: Sharkie CUN, el personaje que ha generado empatía y cercanía con los estudiantes en cada evento de sustentación Integra y que en la plataforma acompaña, guía y responde preguntas.</p></div>
+      <div class="box glass"><span class="tag">Primera pantalla</span><h3>Sharkie da la bienvenida</h3><p>Mientras la plataforma carga, Sharkie aparece en pantalla y se transforma en el logo de Integra 2026C. Así el estudiante reconoce de inmediato el evento, desde el celular o desde las pantallas de las salas.</p></div>
+    </div>
+    <figure class="shot" style="margin-top:22px"><div class="frame"><div class="bar" aria-hidden="true"><i></i><i></i><i></i></div><img src="img/cap/00_loader.webp" alt="Pantalla de carga con Sharkie" width="1440" height="900" loading="lazy"></div><figcaption>Pantalla de carga: Sharkie antes de transformarse en el logo de Integra 2026C.</figcaption></figure>
+  </div>
+</section>
+
+<!-- 02 COMITÉ -->
+<section class="ch" id="comite">
+  <div class="wrap">
+    <div class="chhead"><span class="chnum">02</span><h2>Por qué creamos el Comité Integra</h2></div>
+    <div class="host"><img src="img/brand/sharkie-idea.webp" alt="" width="96" height="128"><div class="bubble"><b class="who">Sharkie</b><p>El Comité es de mis partes favoritas: estudiantes que apoyan a estudiantes y a docentes, y que aprenden a evaluar en el proceso.</p></div></div>
+    <div class="prose">
+      <p>El Comité Integra está conformado por estudiantes de octavo y noveno semestre. La función se les otorga por su alto promedio académico durante todo el semestre, como un reconocimiento y como una responsabilidad.</p>
+      <p>Durante la jornada, el Comité apoya a los grupos y a los docentes: toma asistencia, controla el tiempo de cada sustentación, registra novedades y deja constancia de la decisión de cada grupo. Así los docentes se concentran en evaluar y los estudiantes saben en todo momento en qué fase va su sustentación.</p>
+    </div>
+    <div class="cols3">
+      <div class="box glass"><span class="tag">Aprendizaje 1</span><h3>Criterio evaluativo</h3><p>Observan cómo se aplica la rúbrica y cómo se argumenta una nota frente a un proyecto real.</p></div>
+      <div class="box glass"><span class="tag">Aprendizaje 2</span><h3>Análisis crítico</h3><p>Registran lo que ven en sala con criterio: el comportamiento del grupo, la dupla docente y la logística.</p></div>
+      <div class="box glass"><span class="tag">Aprendizaje 3</span><h3>Responsabilidad ejecutiva</h3><p>Llevan el ritmo de la jornada: tiempos, asistencia y registros que después consultan docentes y coordinación.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 03 RECORRIDO PÚBLICO -->
+<section class="ch" id="recorrido">
+  <div class="wrap">
+    <div class="chhead"><span class="chnum">03</span><h2>Recorrido por la plataforma: estudiantes y público</h2></div>
+    <div class="host"><img src="img/brand/sharkie-search.webp" alt="" width="96" height="128"><div class="bubble"><b class="who">Sharkie</b><p>Empecemos por lo que ve cualquier estudiante: no necesita cuenta, solo abrir el enlace.</p></div></div>
+
+    <div class="feat">
+      <div class="shotcol"><figure class="shot"><div class="frame"><div class="bar" aria-hidden="true"><i></i><i></i><i></i></div><img src="img/cap/01_inicio.webp" alt="Pantalla de inicio con buscador" width="1440" height="900" loading="lazy"></div><figcaption>Inicio con el buscador, los accesos rápidos y la cuenta regresiva.</figcaption></figure></div>
+      <div><span class="tag">Inicio y buscador</span><h3>Encuentra tu sustentación en segundos</h3><p>El estudiante escribe el nombre de su proyecto o de un integrante y la plataforma le muestra su día, hora, sala y docentes. Desde aquí también entra a votar, a descargar su certificado o a los portales de docentes y Comité.</p>
+        <div class="rules"><h4>Condiciones y mecánicas</h4><ul>
+          <li><b>Acceso libre:</b> no pide usuario ni contraseña.</li>
+          <li>Busca por <b>nombre del proyecto o de un integrante</b>, con sugerencias mientras escribe; Enter muestra el resultado.</li>
+          <li>La tarjeta muestra fecha, hora, sala, semestre, docente NIP, evaluador 2, integrantes y el grupo anterior y siguiente.</li>
+        </ul></div></div>
+    </div>
+
+    <div class="feat rev">
+      <div class="shotcol"><figure class="shot"><div class="frame"><div class="bar" aria-hidden="true"><i></i><i></i><i></i></div><img src="img/cap/03_agenda.webp" alt="Agenda pública por día y sala" width="1440" height="900" loading="lazy"></div><figcaption>Agenda pública con filtros por día, sala y semestre.</figcaption></figure></div>
+      <div><span class="tag">Agenda</span><h3>Toda la jornada en dos columnas</h3><p>La agenda muestra cada sala como una columna con sus bloques de 15 minutos, el logo de cada proyecto y sus docentes. Es la vista que se proyectaba y consultaba durante la jornada.</p>
+        <div class="rules"><h4>Condiciones y mecánicas</h4><ul>
+          <li>Salas: <b>Biblioteca de 8:00 a 12:00</b> y <b>Aula Audiovisual de 7:00 a 13:00</b>.</li>
+          <li>Filtros por día (3 y 4 de noviembre), sala, semestre y texto libre.</li>
+          <li>Se actualiza sola con lo que cambien docentes y administradores en la base de datos.</li>
+        </ul></div></div>
+    </div>
+
+    <div class="shots2">
+      <figure class="shot"><div class="frame"><div class="bar" aria-hidden="true"><i></i><i></i><i></i></div><img src="img/cap/04_sharkie_faq.webp" alt="Pregúntale a Sharkie" width="1440" height="900" loading="lazy"></div><figcaption><b>Pregúntale a Sharkie.</b> Responde solo con las preguntas frecuentes oficiales de Integra 2026C y cita la fuente; si no sabe algo, no inventa.</figcaption></figure>
+      <figure class="shot"><div class="frame"><div class="bar" aria-hidden="true"><i></i><i></i><i></i></div><img src="img/cap/05_qr_artivive.webp" alt="Pósteres con realidad aumentada" width="1440" height="900" loading="lazy"></div><figcaption><b>Pósteres que cobran vida.</b> Código QR y enlaces a la app Artivive para ver con realidad aumentada el contenido de los pósteres.</figcaption></figure>
+    </div>
+    <figure class="shot" style="margin-top:18px"><div class="frame"><div class="bar" aria-hidden="true"><i></i><i></i><i></i></div><img src="img/cap/06_accesibilidad.webp" alt="Panel de accesibilidad" width="1440" height="900" loading="lazy"></div><figcaption><b>Accesibilidad.</b> Tamaño de texto, alto contraste, menos movimiento, sonidos y modo ligero para equipos lentos; las preferencias quedan guardadas en cada dispositivo.</figcaption></figure>
+
+    <h3 style="margin:34px 0 4px">Así se ve en el celular</h3>
+    <p style="color:var(--ink-2)">Todo el sitio se adapta a la pantalla del teléfono: el menú pasa arriba y cada sección queda a un toque.</p>
+    <div class="phones">
+      <figure class="shot"><div class="phone"><img src="img/cap/m1_inicio.webp" alt="Inicio en celular" width="390" height="844" loading="lazy"></div></figure>
+      <figure class="shot"><div class="phone"><img src="img/cap/m2_agenda.webp" alt="Agenda en celular" width="390" height="844" loading="lazy"></div></figure>
+      <figure class="shot"><div class="phone"><img src="img/cap/m3_votar.webp" alt="Votación en celular" width="390" height="844" loading="lazy"></div></figure>
+      <figure class="shot"><div class="phone"><img src="img/cap/m4_certificados.webp" alt="Certificados en celular" width="390" height="844" loading="lazy"></div></figure>
+      <figure class="shot"><div class="phone"><img src="img/cap/m5_comite.webp" alt="Cronómetro del Comité en celular" width="390" height="844" loading="lazy"></div></figure>
+    </div>
+  </div>
+</section>
+
+<!-- 04 VOTACIÓN -->
+<section class="ch" id="votacion">
+  <div class="wrap">
+    <div class="chhead"><span class="chnum">04</span><h2>Votación del mejor proyecto · Semana C</h2></div>
+    <div class="host"><img src="img/brand/sharkie-surprise.webp" alt="" width="96" height="128"><div class="bubble"><b class="who">Sharkie</b><p>¡Lo más nuevo! El 5 de noviembre se habilitó un espacio para que estudiantes y docentes elijan el mejor proyecto destacado del semestre.</p></div></div>
+    <div class="feat">
+      <div class="shotcol"><figure class="shot"><div class="frame"><div class="bar" aria-hidden="true"><i></i><i></i><i></i></div><img src="img/cap/08_votar_eleccion.webp" alt="Galería de proyectos destacados con un proyecto elegido" width="1440" height="900" loading="lazy"></div><figcaption>Galería de los 24 proyectos destacados, con la barra de voto abajo.</figcaption></figure></div>
+      <div><span class="tag">Cómo se vota</span><h3>Un voto por persona, con la cédula</h3><p>El votante toca el proyecto que más lo inspiró, escribe su número de cédula y confirma tocando el botón dos veces. La plataforma responde con su nombre y el proyecto elegido.</p>
+        <div class="rules"><h4>Condiciones</h4><ul>
+          <li><b>Fecha:</b> 17 de noviembre de 2026, desde las 6:00 a. m. hasta la 1:00 p. m.; antes de abrir se muestra una cuenta regresiva.</li>
+          <li><b>Quién vota:</b> estudiantes y docentes con cédula registrada en la base de datos.</li>
+          <li><b>Candidatos:</b> solo los 24 proyectos destacados, con nota de 4,8 a 5,0.</li>
+          <li><b>Un solo voto por cédula</b> y nunca por el proyecto propio.</li>
+          <li>La cédula se guarda cifrada en el registro de votos; nadie puede ver por quién votó cada persona.</li>
+        </ul></div></div>
+    </div>
+    <div class="shots2">
+      <figure class="shot"><div class="frame"><div class="bar" aria-hidden="true"><i></i><i></i><i></i></div><img src="img/cap/09_votar_gracias.webp" alt="Confirmación del voto" width="1440" height="900" loading="lazy"></div><figcaption><b>Voto registrado.</b> Sharkie confirma el voto; un segundo intento con la misma cédula es rechazado.</figcaption></figure>
+      <figure class="shot"><div class="frame"><div class="bar" aria-hidden="true"><i></i><i></i><i></i></div><img src="img/cap/19_admin_votacion.webp" alt="Resultados en vivo para administradores" width="1440" height="900" loading="lazy"></div><figcaption><b>Resultados en vivo (solo administradores).</b> Votos totales, por estudiantes y docentes, participación y ranking.</figcaption></figure>
+    </div>
+    <div class="feat rev" style="margin-top:28px">
+      <div class="shotcol"><figure class="shot"><div class="frame"><div class="bar" aria-hidden="true"><i></i><i></i><i></i></div><img src="img/cap/28_votar_ganador.webp" alt="Ganador publicado" width="1440" height="900" loading="lazy"></div><figcaption>Así se anuncia el ganador cuando un administrador lo publica. Imagen con votos de prueba.</figcaption></figure></div>
+      <div><span class="tag">Cierre</span><h3>El ganador se publica con un clic</h3><p>Los resultados no se ven en la web mientras la votación está abierta. Al cerrar, un docente administrador revisa el ranking y toca «Publicar ganador»; desde ese momento el proyecto aparece destacado para todos.</p>
+        <div class="rules"><h4>Mecánicas</h4><ul>
+          <li>El botón «Publicar ganador» se activa solo cuando cierra la votación.</li>
+          <li>Si hay empate, el administrador elige el ganador desde la tabla.</li>
+          <li>El ganador se puede ocultar de nuevo y el ranking completo se descarga en PDF.</li>
+          <li>Las fechas se cambian en la hoja CONFIGURACION, sin tocar el código.</li>
+        </ul></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 05 CERTIFICADOS -->
+<section class="ch" id="certificados">
+  <div class="wrap">
+    <div class="chhead"><span class="chnum">05</span><h2>Generador de certificados</h2></div>
+    <div class="host"><img src="img/brand/sharkie-happy.webp" alt="" width="96" height="128"><div class="bubble"><b class="who">Sharkie</b><p>Cada estudiante puede descargar su certificado sin esperar a que se lo envíen. Solo necesita su cédula.</p></div></div>
+    <div class="feat">
+      <div class="shotcol"><figure class="shot"><div class="frame"><div class="bar" aria-hidden="true"><i></i><i></i><i></i></div><img src="img/cap/11_certificados_resultado.webp" alt="Búsqueda de certificados por cédula" width="1440" height="900" loading="lazy"></div><figcaption>El estudiante escribe su cédula y descarga sus certificados en PDF. Datos de ejemplo.</figcaption></figure></div>
+      <div><span class="tag">Para estudiantes</span><h3>Dos certificados, generados al momento</h3><p>Con la cédula, la plataforma encuentra al estudiante y arma su certificado de participación con su nombre completo y su número de cédula. Si su proyecto está entre los destacados, aparece además el reconocimiento a Mejor Proyecto.</p>
+        <div class="rules"><h4>Condiciones y mecánicas</h4><ul>
+          <li><b>Participación:</b> todo estudiante con cédula registrada; lleva su nombre completo y «Con C.C.».</li>
+          <li><b>Mejor Proyecto:</b> integrantes de los 24 proyectos destacados (nota de 4,8 a 5,0); lleva el nombre del proyecto, uno por proyecto.</li>
+          <li>El PDF se genera en el navegador con el diseño oficial de fondo; un nombre largo se ajusta solo al espacio.</li>
+          <li>La coordinación abre o cierra la descarga con un interruptor en la hoja CONFIGURACION.</li>
+          <li>Si un nombre tiene un error, se corrige en la hoja y el siguiente PDF ya sale bien.</li>
+        </ul></div></div>
+    </div>
+    <div class="certs">
+      <figure class="shot"><img src="img/cap/cert_participacion.webp" alt="Certificado de participación generado" width="1267" height="979" loading="lazy"><figcaption>Certificado de participación generado por la plataforma. Nombre y cédula ficticios.</figcaption></figure>
+      <figure class="shot"><img src="img/cap/cert_mejor.webp" alt="Reconocimiento Mejor Proyecto generado" width="1267" height="979" loading="lazy"><figcaption>Reconocimiento a Mejor Proyecto, con el nombre del proyecto.</figcaption></figure>
+    </div>
+    <figure class="shot" style="margin-top:22px"><div class="frame"><div class="bar" aria-hidden="true"><i></i><i></i><i></i></div><img src="img/cap/20_admin_certificados.webp" alt="Generación masiva de certificados" width="1440" height="900" loading="lazy"></div><figcaption><b>Para administradores:</b> todos los certificados en un solo PDF para imprimir, o en un ZIP con un PDF por estudiante para enviar por correo, con una alerta de los nombres que conviene revisar antes.</figcaption></figure>
+  </div>
+</section>
+
+<!-- 06 DOCENTES -->
+<section class="ch" id="docentes">
+  <div class="wrap">
+    <div class="chhead"><span class="chnum">06</span><h2>Portal docente</h2></div>
+    <div class="host"><img src="img/brand/sharkie-doubt.webp" alt="" width="96" height="128"><div class="bubble"><b class="who">Sharkie</b><p>Los docentes tienen su propia puerta. Aquí registran grupos, evalúan con la rúbrica y descargan sus informes.</p></div></div>
+    <div class="shots2">
+      <figure class="shot"><div class="frame"><div class="bar" aria-hidden="true"><i></i><i></i><i></i></div><img src="img/cap/12_docente_login.webp" alt="Ingreso del docente" width="1440" height="900" loading="lazy"></div><figcaption><b>Ingreso:</b> correo institucional y cédula como contraseña.</figcaption></figure>
+      <figure class="shot"><div class="frame"><div class="bar" aria-hidden="true"><i></i><i></i><i></i></div><img src="img/cap/13_docente_mis_grupos.webp" alt="Grupos asignados" width="1440" height="900" loading="lazy"></div><figcaption><b>Proyectos:</b> grupos asignados, pendientes por evaluar y datos incompletos.</figcaption></figure>
+    </div>
+    <div class="rules" style="margin:16px 0 34px"><h4>Condiciones y mecánicas del acceso</h4><ul>
+      <li>Solo correos <b>@cun.edu.co</b> registrados en la hoja DOCENTES; la cédula se guarda cifrada.</li>
+      <li>La sesión dura 12 horas; cuatro docentes tienen además permisos de administrador.</li>
+      <li>Cualquier docente puede corregir los datos de un grupo: semestre, integrantes, dupla evaluadora, logo y horario.</li>
+      <li>Botón directo a la app oficial «Evaluación de proyectos - CUN», de uso obligatorio para la nota institucional.</li>
+    </ul></div>
+
+    <div class="feat">
+      <div class="shotcol"><figure class="shot"><div class="frame"><div class="bar" aria-hidden="true"><i></i><i></i><i></i></div><img src="img/cap/14_docente_registrar.webp" alt="Registro de un nuevo proyecto" width="1440" height="900" loading="lazy"></div><figcaption>Registro y edición de grupos, con logo y aviso de cruces de horario.</figcaption></figure></div>
+      <div><span class="tag">Nuevo proyecto</span><h3>Registrar o editar un grupo</h3><p>El docente carga el nombre, el semestre, las asignaturas, la dupla evaluadora, hasta tres integrantes, el logo y el enlace de Drive, y elige el horario.</p>
+        <div class="rules"><h4>Mecánicas</h4><ul>
+          <li>Avisa si el horario o un docente se cruza con otro grupo.</li>
+          <li>Los cambios llegan a la agenda pública sin publicar nada a mano.</li>
+          <li>Solo un administrador puede cancelar un grupo; queda marcado como «Cancelado», no se borra.</li>
+        </ul></div></div>
+    </div>
+
+    <div class="feat rev">
+      <div class="shotcol"><figure class="shot"><div class="frame"><div class="bar" aria-hidden="true"><i></i><i></i><i></i></div><img src="img/cap/15_docente_rubrica.webp" alt="Rúbrica por niveles con caritas de Sharkie" width="1440" height="900" loading="lazy"></div><figcaption>Rúbrica de 8 criterios con caritas de Sharkie y la nota en vivo abajo.</figcaption></figure></div>
+      <div><span class="tag">Evaluar</span><h3>La rúbrica se lee de un vistazo</h3><p>Cada criterio tiene cinco niveles representados con caritas de Sharkie, de aburrido a feliz. El docente toca un nivel, ajusta la nota fina si lo necesita y ve la nota final calculada abajo mientras evalúa.</p>
+        <div class="rules"><h4>Condiciones y mecánicas</h4><ul>
+          <li>Niveles: Ausente (0,1 a 1,0), Muy bajo, Bajo, Medio y Alto (4,1 a 5,0); la nota base es el promedio de los 8 criterios.</li>
+          <li><b>Topes automáticos:</b> impuntualidad, máximo 4,0; sin investigación, bitácora o póster, máximo 3,0 (el póster no se exige en primer semestre); no se presentó, 0,1.</li>
+          <li>No deja guardar una evaluación incompleta.</li>
+          <li>«Copiar resumen» prepara el texto para pasarlo a la app oficial de la CUN.</li>
+        </ul></div></div>
+    </div>
+
+    <div class="feat">
+      <div class="shotcol"><figure class="shot"><div class="frame"><div class="bar" aria-hidden="true"><i></i><i></i><i></i></div><img src="img/cap/16_docente_entregables.webp" alt="Entregables y observaciones por voz" width="1440" height="900" loading="lazy"></div><figcaption>Lista de entregables, condiciones y observaciones con dictado por voz.</figcaption></figure></div>
+      <div><span class="tag">Entregables y observaciones</span><h3>Dictar en vez de teclear</h3><p>El docente marca los entregables verificados (bitácora, documento de investigación, póster, carpeta de Drive y otros) y escribe o dicta sus observaciones para el grupo.</p>
+        <div class="rules"><h4>Mecánicas</h4><ul>
+          <li>El dictado convierte la voz en texto en español de Colombia, desde el navegador.</li>
+          <li>Al desmarcar un entregable obligatorio, la nota se ajusta sola al tope.</li>
+        </ul></div></div>
+    </div>
+
+    <div class="shots2">
+      <figure class="shot"><div class="frame"><div class="bar" aria-hidden="true"><i></i><i></i><i></i></div><img src="img/cap/17_docente_informes.webp" alt="Mis informes" width="1440" height="900" loading="lazy"></div><figcaption><b>Mis informes:</b> un PDF con sus calificaciones y todo lo que el Comité registró en cada sesión: horarios, tiempos por fase, asistencia, notas extraordinarias y decisión del grupo.</figcaption></figure>
+      <figure class="shot"><div class="frame"><div class="bar" aria-hidden="true"><i></i><i></i><i></i></div><img src="img/cap/18_admin_exportes.webp" alt="Resultados y descargas de administradores" width="1440" height="900" loading="lazy"></div><figcaption><b>Resultados y descargas (solo administradores):</b> resultados finales, listas y agenda por aula en Excel y PDF.</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- 07 COMITÉ EN SALA -->
+<section class="ch" id="comite-sala">
+  <div class="wrap">
+    <div class="chhead"><span class="chnum">07</span><h2>El Comité en sala</h2></div>
+    <div class="host"><img src="img/brand/sharkie-faq.webp" alt="" width="96" height="128"><div class="bubble"><b class="who">Sharkie</b><p>Esta es la herramienta que usa el Comité durante cada sustentación. Todo cabe en una pantalla.</p></div></div>
+    <div class="feat">
+      <div class="shotcol"><figure class="shot"><div class="frame"><div class="bar" aria-hidden="true"><i></i><i></i><i></i></div><img src="img/cap/22_comite_panel.webp" alt="Panel del Comité" width="1440" height="900" loading="lazy"></div><figcaption>Orden de sustentación, grupo en curso con el anterior y el siguiente, y cronómetro.</figcaption></figure></div>
+      <div><span class="tag">Ingreso y panel</span><h3>Una jornada, una sala, un grupo a la vez</h3><p>Cada integrante del Comité entra con su usuario y su código personal, elige el día y la sala, y ve el orden de sustentación con el grupo en curso destacado.</p>
+        <div class="rules"><h4>Condiciones</h4><ul>
+          <li>8 cuentas personales del Comité; cada registro queda firmado con el nombre de quien lo hizo.</li>
+          <li>El Comité no ve ni cambia notas: su trabajo es la asistencia, los tiempos y las novedades.</li>
+        </ul></div></div>
+    </div>
+    <div class="feat rev">
+      <div class="shotcol"><figure class="shot"><div class="frame"><div class="bar" aria-hidden="true"><i></i><i></i><i></i></div><img src="img/cap/24_comite_cronometro.webp" alt="Cronómetro en tres fases" width="1440" height="900" loading="lazy"></div><figcaption>Cronómetro de 15 minutos en su segunda fase.</figcaption></figure></div>
+      <div><span class="tag">Cronómetro</span><h3>15 minutos en tres fases</h3><p>Cada sesión tiene tres fases de 5 minutos: sustentación, deliberación del facilitador y retroalimentación con los alumnos. Una campana suena cada 5 minutos para que la sala sepa cuándo cambiar.</p>
+        <div class="rules"><h4>Mecánicas</h4><ul>
+          <li>Iniciar, pausar, pasar a la siguiente fase, finalizar y registrar, o descartar.</li>
+          <li>Al finalizar se guardan la hora real de inicio y fin, el tiempo de cada fase y el exceso sobre los 15 minutos.</li>
+          <li>Si el navegador se cierra, el cronómetro sigue donde iba al volver a abrirlo.</li>
+        </ul></div></div>
+    </div>
+    <div class="shots2">
+      <figure class="shot"><div class="frame"><div class="bar" aria-hidden="true"><i></i><i></i><i></i></div><img src="img/cap/23_comite_asistencia.webp" alt="Asistencia de estudiantes y docentes" width="1440" height="900" loading="lazy"></div><figcaption><b>Asistencia:</b> Presente, Tarde o Ausente para cada estudiante y para la dupla docente, con un botón de «Todos presentes».</figcaption></figure>
+      <figure class="shot"><div class="frame"><div class="bar" aria-hidden="true"><i></i><i></i><i></i></div><img src="img/cap/25_comite_notas.webp" alt="Notas extraordinarias" width="1440" height="900" loading="lazy"></div><figcaption><b>Notas extraordinarias:</b> por tipo (criterio de la dupla docente, comportamiento del grupo, incidencia logística u otra), con el minuto del cronómetro y dictado por voz.</figcaption></figure>
+      <figure class="shot"><div class="frame"><div class="bar" aria-hidden="true"><i></i><i></i><i></i></div><img src="img/cap/26_comite_decision.webp" alt="Decisión del grupo" width="1440" height="900" loading="lazy"></div><figcaption><b>Decisión del grupo:</b> acepta la nota o solicita segunda evaluación.</figcaption></figure>
+      <figure class="shot"><div class="frame"><div class="bar" aria-hidden="true"><i></i><i></i><i></i></div><img src="img/cap/27_comite_informe.webp" alt="Mi informe del Comité" width="1440" height="900" loading="lazy"></div><figcaption><b>Mi informe:</b> cada integrante descarga en PDF su gestión: grupos atendidos, tiempos, asistencia, notas y decisiones.</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- 08 TECNOLOGÍA -->
+<section class="ch" id="tecnologia">
+  <div class="wrap">
+    <div class="chhead"><span class="chnum">08</span><h2>Cómo se implementó</h2></div>
+    <div class="host"><img src="img/brand/sharkie-idea.webp" alt="" width="96" height="128"><div class="bubble"><b class="who">Sharkie</b><p>Por dentro, la plataforma es más sencilla de lo que parece: cuatro servicios gratuitos que trabajan juntos.</p></div></div>
+    <div class="glass" style="padding:18px 18px 8px;margin-bottom:22px">
+      <svg viewBox="0 0 760 330" role="img" aria-label="Arquitectura de la plataforma: cuatro servicios gratuitos" style="width:100%;height:auto;font-family:Outfit,sans-serif">
+        <defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#7b3fb8"/></marker></defs>
+        <rect x="230" y="14" width="300" height="56" rx="16" fill="#1c1233"/>
+        <text x="380" y="40" text-anchor="middle" font-size="15" font-weight="600" fill="#fff">Estudiantes, docentes y Comité</text>
+        <text x="380" y="58" text-anchor="middle" font-size="11.5" fill="#cfc4e6">Celular, tableta o computador</text>
+        <g fill="none" stroke="#7b3fb8" stroke-width="1.5"><path d="M300 70V96H184V122" marker-end="url(#ar)"/><path d="M460 70V96H576V122" marker-end="url(#ar)"/><path d="M184 262V206" marker-end="url(#ar)"/><path d="M576 206V262" marker-end="url(#ar)"/></g>
+        <text x="176" y="91" text-anchor="end" font-size="11.5" fill="#6a5f86">carga la página</text>
+        <text x="584" y="91" font-size="11.5" fill="#6a5f86">envía y recibe datos</text>
+        <text x="192" y="240" font-size="11.5" fill="#6a5f86">publica cada cambio</text>
+        <text x="584" y="240" font-size="11.5" fill="#6a5f86">lee y escribe</text>
+        <rect x="24" y="124" width="320" height="82" rx="16" fill="#fff" stroke="#5fe3d4" stroke-width="2"/>
+        <text x="42" y="150" font-size="15" font-weight="600" fill="#1c1233">Cloudflare Pages</text>
+        <text x="42" y="171" font-size="11.5" fill="#3a2f55">Publica el sitio: HTML, CSS y JavaScript</text>
+        <text x="42" y="189" font-size="11.5" fill="#3a2f55">PDF, Excel y dictado se hacen en el navegador</text>
+        <rect x="416" y="124" width="320" height="82" rx="16" fill="#fff" stroke="#c3277f" stroke-width="2"/>
+        <text x="434" y="150" font-size="15" font-weight="600" fill="#1c1233">Google Apps Script (API)</text>
+        <text x="434" y="171" font-size="11.5" fill="#3a2f55">Inicio de sesión con firma digital y roles</text>
+        <text x="434" y="189" font-size="11.5" fill="#3a2f55">Reglas de nota, voto único y bloqueos</text>
+        <rect x="24" y="264" width="320" height="56" rx="16" fill="#fff" stroke="#7b3fb8" stroke-width="2"/>
+        <text x="42" y="288" font-size="15" font-weight="600" fill="#1c1233">GitHub (repositorio privado)</text>
+        <text x="42" y="307" font-size="11.5" fill="#3a2f55">Código fuente con historial de versiones</text>
+        <rect x="416" y="264" width="320" height="56" rx="16" fill="#fff" stroke="#f2a516" stroke-width="2"/>
+        <text x="434" y="288" font-size="15" font-weight="600" fill="#1c1233">Google Sheets (base de datos)</text>
+        <text x="434" y="307" font-size="11.5" fill="#3a2f55">17 hojas: grupos, notas, sesiones, votos</text>
+      </svg>
+    </div>
+    <div class="cols2">
+      <div class="box glass"><span class="tag">Despliegue</span><h3>De Netlify a Cloudflare Pages, con GitHub privado</h3><p>La plataforma se publicó primero en Netlify. Su plan gratuito cobra créditos por cada publicación, y con los ajustes en vivo de la semana se agotaban rápido, así que se migró a Cloudflare Pages, que en su plan gratuito no limita el tráfico. El código vive en un repositorio privado de GitHub: cada cambio queda en el historial y se publica solo, y Cloudflare cambia de versión sin dejar el sitio a medias.</p></div>
+      <div class="box glass"><span class="tag">Seguridad y datos</span><h3>Protegido de punta a punta</h3><p>Las sesiones llevan firma digital y vencen a las 12 horas. Las cédulas de los docentes y los votos se guardan cifrados. Los permisos de administrador se validan en el servidor, cada acción queda en una hoja de auditoría y un bloqueo evita que dos personas escriban el mismo registro al tiempo.</p></div>
+    </div>
+    <div class="glass tblwrap" style="margin-top:16px">
+      <table class="tbl">
+        <thead><tr><th>Componente</th><th>Uso</th><th>Costo</th></tr></thead>
+        <tbody>
+          <tr><td>Cloudflare Pages</td><td>Publicación del sitio</td><td class="n">$0</td></tr>
+          <tr><td>GitHub</td><td>Código y versiones, repositorio privado</td><td class="n">$0</td></tr>
+          <tr><td>Google Apps Script</td><td>API del servidor</td><td class="n">$0</td></tr>
+          <tr><td>Google Sheets</td><td>Base de datos</td><td class="n">$0</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- 09 RESULTADOS -->
+<section class="ch" id="resultados">
+  <div class="wrap">
+    <div class="chhead"><span class="chnum">09</span><h2>Rendimiento y acogida</h2></div>
+    <div class="host"><img src="img/brand/sharkie-smile.webp" alt="" width="96" height="128"><div class="bubble"><b class="who">Sharkie</b><p>La plataforma aguantó toda la jornada sin caerse ni una vez. Miren lo que dicen los datos.</p></div></div>
+    <div class="kpis">
+      <div class="kpi glass"><b>12.260</b><span>solicitudes atendidas por Cloudflare en 30 días</span></div>
+      <div class="kpi glass ok"><b>98,74 %</b><span>servidas desde la caché, sin cargar el servidor</span></div>
+      <div class="kpi glass ok"><b>0</b><span>errores de servidor (5xx)</span></div>
+      <div class="kpi glass"><b>44</b><span>archivos no encontrados (4xx), el 0,36 %</span></div>
+    </div>
+    <div class="cols2">
+      <div class="glass chart">
+        <h3>Casi 8 de cada 10 acciones se hicieron en los dos días de sustentación</h3>
+        <p class="sub">407 de 517 acciones registradas en la hoja de auditoría, el 3 y 4 de noviembre</p>
+        <svg id="bars" viewBox="0 0 520 250" role="img" aria-label="Acciones registradas por día, del 23 de octubre al 5 de noviembre"></svg>
+      </div>
+      <div class="glass tblwrap">
+        <table class="tbl">
+          <thead><tr><th>Lo que quedó registrado</th><th>Cantidad</th></tr></thead>
+          <tbody>
+            <tr><td>Sustentaciones finalizadas</td><td class="n">54</td></tr>
+            <tr><td>Sesiones cronometradas (55 grupos)</td><td class="n">60</td></tr>
+            <tr><td>Evaluaciones con rúbrica (55 grupos)</td><td class="n">59</td></tr>
+            <tr><td>Entregables verificados</td><td class="n">55</td></tr>
+            <tr><td>Registros de asistencia</td><td class="n">214</td></tr>
+            <tr><td>Notas extraordinarias del Comité</td><td class="n">9</td></tr>
+            <tr><td>Informes PDF descargados</td><td class="n">17</td></tr>
+            <tr><td>Duración promedio de la sesión</td><td class="n">14,5 min</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+      <figure class="shot glass" style="padding:14px;margin-top:16px"><img src="img/cap/cloudflare.webp" alt="Panel de métricas de Cloudflare Pages" width="2576" height="1018" loading="lazy" style="border-radius:12px"><figcaption>Panel de métricas de Cloudflare Pages del proyecto sustentaciones2026c, últimos 30 días. El pico del 31 de octubre corresponde al lanzamiento y las pruebas.</figcaption></figure>
+    <div style="margin-top:16px">
+      <div class="box glass"><span class="tag">Acogida</span><h3>Señales de buena acogida</h3>
+        <div class="rules" style="margin-top:8px;background:transparent;border:0;padding:0"><ul>
+          <li><b>Adopción total:</b> los 9 docentes entraron y trabajaron en la plataforma, y 6 cuentas del Comité la usaron en sala.</li>
+          <li><b>Cero reclamos de nota:</b> las 55 decisiones registradas fueron «acepta la nota».</li>
+          <li><b>Estudiantes a tiempo:</b> 105 de 106 estudiantes con asistencia registrada estuvieron presentes.</li>
+          <li><b>Ritmo en sala:</b> 14,5 minutos en promedio por sesión, frente a los 15 programados.</li>
+          <li><b>Mejoras a pedido:</b> el cronómetro por fases, el dictado, los informes del Comité, la votación y los certificados nacieron de lo que pidieron docentes y Comité.</li>
+        </ul></div>
+      </div>
+    </div>
+    <div class="glass tblwrap" style="margin-top:16px">
+      <table class="tbl">
+        <thead><tr><th>Aprendizaje</th><th>Mejora para el próximo Integra</th></tr></thead>
+        <tbody>
+          <tr><td>96 de 121 nombres de estudiantes venían en mayúsculas y con los apellidos primero.</td><td>Inscripción de grupos dentro de la plataforma, con nombres y apellidos en campos separados.</td></tr>
+          <tr><td>Los bloques de 12 minutos no alcanzaban para la sesión de 15; se ajustaron la noche del 3 de noviembre.</td><td>Programar desde el inicio bloques de 15 minutos.</td></tr>
+          <tr><td>Hubo 46 inicios de sesión fallidos frente a 101 correctos.</td><td>Mostrar ayuda junto al campo y recordar el formato de la cédula y del código.</td></tr>
+          <tr><td>La plataforma depende de una cuenta personal de docente.</td><td>Pasar la hoja y el Apps Script a una cuenta institucional del programa.</td></tr>
+          <tr><td>La satisfacción no se midió de forma directa.</td><td>Cerrar la jornada con una encuesta corta de 1 a 5.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- 10 SAMALAB -->
+<section class="ch" id="samalab">
+  <div class="wrap">
+    <div class="chhead"><span class="chnum">10</span><h2>Propuesta: SamaLab by CUN</h2></div>
+    <div class="host"><img src="img/brand/sharkie-idea.webp" alt="" width="96" height="128"><div class="bubble"><b class="who">Sharkie</b><p>Esta plataforma la hizo SamaLab. La idea ahora es que SamaLab deje de ser una firma en el pie de página y se convierta en un semillero formal.</p></div></div>
+    <div class="samahead"><img src="img/brand/samalab-oscuro.svg" alt="SamaLab-CUN" width="190" height="46"><p>Semillero de tecnología e innovación del programa de Diseño Gráfico de la CUN, regional Santa Marta. Un laboratorio hecho por estudiantes y para estudiantes, donde el diseño se anima, se programa y se vuelve experiencia.</p></div>
+    <div class="cols2">
+      <div class="box glass"><span class="tag">Propósito</span><h3>Diseño que se conecta con la tecnología</h3><p>Acercar a los estudiantes de Diseño Gráfico a las tecnologías que hoy definen la profesión, con proyectos reales, monitorías entre pares y asesoría a grupos, siempre con acompañamiento docente.</p></div>
+      <div class="box glass"><span class="tag">Visión</span><h3>El referente de innovación de Bellas Artes</h3><p>Ser el lugar de la regional al que llegan las ideas de los estudiantes que necesitan tecnología para hacerse realidad, y del que salen proyectos que la universidad y la ciudad pueden usar.</p></div>
+    </div>
+    <h3 style="margin:30px 0 12px">Líneas de trabajo</h3>
+    <div class="cols3">
+      <div class="box glass"><span class="tag">AR</span><h3>Ilustración y realidad aumentada</h3><p>Ilustraciones, empaques y carteles que cobran vida en el celular.</p></div>
+      <div class="box glass"><span class="tag">Interactivo</span><h3>Publicidad interactiva</h3><p>Campañas y piezas que el público toca, escanea o juega.</p></div>
+      <div class="box glass"><span class="tag">Web y apps</span><h3>Desarrollo web y de aplicaciones</h3><p>Sitios, apps y plataformas diseñados y programados por estudiantes, como Integra 2026C.</p></div>
+      <div class="box glass"><span class="tag">IA</span><h3>IA aplicada al diseño</h3><p>Flujos creativos y herramientas con inteligencia artificial, usadas con criterio y ética.</p></div>
+      <div class="box glass"><span class="tag">3D</span><h3>Prototipado y fabricación digital</h3><p>Impresión y escaneo 3D de empaques, personajes y prototipos.</p></div>
+      <div class="box glass"><span class="tag">Comunidad</span><h3>Monitorías y talleres</h3><p>Sesiones abiertas para todo el programa durante los periodos A y C.</p></div>
+    </div>
+    <div class="cols2" style="margin-top:22px">
+      <div class="box glass"><span class="tag">Cómo funciona</span><h3>Estudiantes que guían a estudiantes</h3>
+        <div class="rules" style="background:transparent;border:0;padding:0;margin-top:8px"><ul>
+          <li><b>Monitores:</b> estudiantes del ciclo profesional que acompañan y asesoran a grupos de los ciclos técnico y tecnológico.</li>
+          <li><b>Acompañamiento:</b> un docente de planta líder que dirige y avala, con el apoyo de los docentes del programa.</li>
+          <li><b>Periodos A y C:</b> actividades académicas extracurriculares y de apoyo en la regional.</li>
+          <li><b>Expansión:</b> empezar en Diseño Gráfico y abrirse a los programas afines de la Escuela de Bellas Artes de la CUN.</li>
+          <li><b>Vitrina:</b> los proyectos asesorados se muestran en la siguiente edición de Integra.</li>
+        </ul></div></div>
+      <div class="box glass"><span class="tag">Tecnología que buscamos para la regional</span><h3>Equipos para crecer</h3>
+        <div class="rules" style="background:transparent;border:0;padding:0;margin-top:8px"><ul>
+          <li><b>Equipos de realidad aumentada</b> para probar y mostrar experiencias inmersivas.</li>
+          <li><b>Impresoras 3D y escáneres 3D</b> para prototipos y modelado de objetos reales.</li>
+          <li><b>Tabletas de dibujo</b> para ilustración digital y animación.</li>
+          <li><b>Software especializado</b> de modelado, animación, AR y desarrollo.</li>
+          <li><b>Modelos de IA en versión pro</b>, sin los límites de las versiones gratuitas.</li>
+        </ul></div></div>
+    </div>
+    <div class="glass box" style="margin-top:16px"><span class="tag">Próximos pasos</span>
+      <div class="timeline" style="margin:8px 0 0">
+        <div class="step" style="padding:6px 0"><span class="when">Paso 1</span><h3>Presentar la propuesta</h3><p>A la dirección del programa de Diseño Gráfico.</p></div>
+        <div class="step" style="padding:6px 0"><span class="when">Paso 2</span><h3>Formalizar</h3><p>Designar el docente de planta líder y registrar el semillero ante investigación.</p></div>
+        <div class="step" style="padding:6px 0"><span class="when">Paso 3</span><h3>Convocar monitores</h3><p>Estudiantes del ciclo profesional para el periodo A.</p></div>
+        <div class="step" style="padding:6px 0"><span class="when">Paso 4</span><h3>Equipar</h3><p>Priorizar y cotizar la lista de equipos y software.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CIERRE -->
+<section class="close">
+  <div class="wrap">
+    <div class="card glass">
+      <img class="sh" src="img/brand/sharkie-happy.webp" alt="" width="200" height="266">
+      <div><p class="eyebrow">Cierre</p><p class="quote">Hecho por estudiantes y docentes, para estudiantes y docentes. Nos vemos en el próximo Integra.</p><p style="margin-top:12px;color:var(--ink-2)">Sharkie, en nombre de SamaLab-CUN y del programa de Diseño Gráfico de la CUN, regional Santa Marta.</p></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <img class="int" src="img/brand/logoIntegra2026C.png" alt="Integra 2026C" width="156" height="46">
+    <img class="dg" src="img/brand/dg-cun-negro.png" alt="Diseño Gráfico · CUN" width="133" height="24">
+    <span>Informe de la plataforma Integra 2026C · Santa Marta · noviembre de 2026. Datos: Cloudflare Pages y base de datos INTEGRA 2026C.</span>
+    <span class="sign">Designed by <img src="img/brand/samalab-color.svg" alt="SamaLab-CUN" width="84" height="20"> 2026</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var rows=[["2026-10-23",7],["2026-10-24",3],["2026-10-25",0],["2026-10-26",9],["2026-10-27",1],["2026-10-28",0],["2026-10-29",0],["2026-10-30",8],["2026-10-31",57],["2026-11-01",7],["2026-11-02",17],["2026-11-03",209],["2026-11-04",198],["2026-11-05",1]];
+  var svg=document.getElementById('bars'); if(!svg) return;
+  var NS='http://www.w3.org/2000/svg', max=Math.max.apply(null,rows.map(function(r){return r[1]})), left=8, w=504, base=200, h=160, band=w/rows.length;
+  var mes=['ene','feb','mar','abr','may','jun','jul','ago','sep','oct','nov','dic'];
+  function el(t,a,txt){var e=document.createElementNS(NS,t);for(var k in a)e.setAttribute(k,a[k]);if(txt!=null)e.textContent=txt;svg.appendChild(e);return e;}
+  el('line',{x1:left,x2:left+w,y1:base,y2:base,stroke:'#c9bfe0'});
+  rows.forEach(function(r,i){
+    var ev=r[0]==='2026-11-03'||r[0]==='2026-11-04', x=left+i*band+band/2, bh=r[1]/max*h;
+    var rect=el('rect',{x:x-12,y:base-bh,width:24,height:Math.max(bh,0),rx:4,fill:ev?'#7b3fb8':'#cfc6e4'});
+    var t=document.createElementNS(NS,'title');t.textContent=Number(r[0].slice(8))+' '+mes[Number(r[0].slice(5,7))-1]+': '+r[1]+' acciones';rect.appendChild(t);
+    if(r[1]>0) el('text',{x:x,y:base-bh-6,'text-anchor':'middle','font-size':ev?13:11,'font-weight':ev?700:400,fill:ev?'#1c1233':'#6a5f86','font-family':'Outfit,sans-serif'},r[1]);
+    el('text',{x:x,y:base+17,'text-anchor':'middle','font-size':11,fill:ev?'#1c1233':'#6a5f86','font-weight':ev?600:400,'font-family':'Outfit,sans-serif'},Number(r[0].slice(8)));
+    el('text',{x:x,y:base+31,'text-anchor':'middle','font-size':10,fill:'#6a5f86','font-family':'Outfit,sans-serif'},mes[Number(r[0].slice(5,7))-1]);
+  });
+})();
+</script>
+</body>
+</html>
